@@ -287,7 +287,6 @@ get_chart_directories() {
   if [ -n "$chart_file" ]; then
     # Return the directory containing the file
     dirname "$chart_file"
-    return 0
   fi
 }
 
