@@ -2,7 +2,7 @@
 
 A collection of pre-commit hooks for validating helm charts and ArgoCD manifests.
 
-This is inspired by [papanito/helm-pre-commit](https://github.com/ngamber/pre-commit) and updated/enhanced for my needs
+This is inspired by [ngamber/helm-pre-commit](https://github.com/ngamber/pre-commit) and updated/enhanced for my needs
 
 ## Available Hooks
 
