@@ -17,7 +17,7 @@
   description: Validates custom Helm charts (with Chart.yaml)
   entry: hooks/helm-validate-custom-charts.sh
   language: script
-  files: ^argocd/.+/(Chart\.yaml|templates/.+\.(yaml|yml))$
+  files: ^.*/(Chart\.yaml|templates/.+\.(yaml|yml))$
   pass_filenames: false
   require_serial: true
 
@@ -27,27 +27,17 @@
   description: Validates values-only charts (referencing upstream charts)
   entry: hooks/helm-validate-values-only.sh
   language: script
-  files: ^argocd/.+/values\.(yaml|yml)$
+  files: ^.*/(Chart\.yaml|templates/.+\.(yaml|yml))$
   pass_filenames: false
   require_serial: true
 
 # ApplicationSet validation - validates ApplicationSet YAML syntax
-- id: helm-validate-appsets
-  name: ApplicationSet Validation
+- id: argocd-validate-appsets
+  name: ArgoCD ApplicationSet Validation
   description: Validates ApplicationSet YAML syntax and structure
-  entry: hooks/helm-validate-appsets.sh
+  entry: hooks/argocd-validate-appsets.sh
   language: script
   files: \.(yaml|yml)$
   pass_filenames: false
   require_serial: true
   args: []
-
-# Legacy hook - kept for backward compatibility (same as helm-template-all)
-- id: helm-template-validate
-  name: Helm Template Validation (Legacy)
-  description: Legacy hook - use helm-template-all instead
-  entry: hooks/helm-template-all.sh
-  language: script
-  files: \.(yaml|yml)$
-  pass_filenames: false
-  require_serial: true
